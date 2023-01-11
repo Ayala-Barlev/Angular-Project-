@@ -1,0 +1,183 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body{
+    font-family: 'Amatic SC';font-size: 22px;
+    direction:rtl;
+    text-align: center;
+}
+a:hover{
+    opacity: 0.5;
+    transition: 200ms;
+}
+.background-image{
+    background-image: url("/assets/חדר ורוד.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .background-image-opacity{
+    background-image: url("/assets/חדר ורוד2.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
+}
+.shadow-text{
+    text-shadow: 1px 1px 2px #000000;
+}
+.lightPink{
+  border:2px solid rgb(252 214 218);
+}
+.lightBlue{
+  border:2px solid rgb(126 187 226);
+}
+.pink{
+  border:2px solid rgb(169 1 51);
+}
+.lightPinkText{
+  color: rgb(252 214 218);
+}
+.lightBlueText{
+  color: rgb(126 187 226);
+}
+.pinkText{
+  color: rgb(169 1 51);
+}
+.pinkText:hover{
+  color: rgb(105 197 179);
+  transition: 200ms;
+}
+.lightPinkText:hover{
+  color: rgb(105 197 179);
+  transition: 200ms;
+}
+.lightBlueText:hover{
+  color: rgb(105 197 179);
+  transition: 200ms;
+}
+.resetButtom{
+  background-color: rgb(255, 255, 255);
+  border: none;
+}
+.buttomRound {
+  background-color: #d03d4c;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+
+  position: fixed; /* Stay fixed */
+  top: 80%;
+  right:  80px;
+  z-index: 2;
+  padding: 20px;
+  box-shadow: 0 0.5em 1.5em rgb(0 0 0 / 45%);
+}
+.buttomRound:hover{
+  background-color: rgb(105 197 179);
+  transition: 200ms;
+}
+.btn-primary{
+  --bs-btn-color: #fff;
+    --bs-btn-bg: #d03d4c;
+    --bs-btn-border-color: #d03d4c;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #d03d4c;
+    --bs-btn-hover-border-color: #d03d4c;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #d03d4c;
+    --bs-btn-active-border-color: #d03d4c;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #d03d4c;
+    --bs-btn-disabled-border-color: #d03d4c;
+}
+.btn-primary-white:hover{
+  border: none;
+  background-color: #9db0bf;
+  color: #ffffff;
+  transition: 200ms;
+}
+.btn-primary-white{
+  color: #d03d4c;
+  --bs-btn-color: #fff;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #fff;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #fff;
+    --bs-btn-active-border-color: #fff;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #fff;
+    --bs-btn-disabled-border-color: #fff;
+}
+.alertValid{
+  background-color: #a0b4e4;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 6px ;
+  width: 100%;
+  z-index: 2;
+}
+.alertTextValid{
+  color: #ffffff;
+  font-size: 18px;
+  text-shadow: 0 0em 1em rgb(0 0 0 / 75%);
+}
+.date{
+  margin-top:20px ;
+  margin-left: 40px;
+  color: #d69fab;
+}
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+.text{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+.img-graphology{
+  background-image: url("/assets/צבעי קרש.jpg");
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

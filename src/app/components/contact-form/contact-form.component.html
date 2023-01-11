@@ -1,0 +1,86 @@
+<div class="modal modal-signin position-static d-block py-4 mt-2" id="modalSignin">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2"><img src="/assets/logo.png" width="40px">יצירת קשר:</h1>
+            </div>
+            <div class="modal-body p-5 pt-0">
+                <form (ngSubmit)="onSubmit()" #MassageForm="ngForm">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-3" name="name" minlength="2" required [(ngModel)]="massage.name" #name="ngModel" appNameValid>
+                        <label for="fullName">שם</label>
+                        
+                        <div [hidden]="!name.errors?.['onlyLettersInValid'] &&(name.value || name.pristine && name?.untouched)" class="alertValid">
+                            <span class="alertTextValid">
+                                the name must be decrease two letters and only hebrow letters
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                </svg>
+                            </span> 
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="tel" class="form-control rounded-3" name="phone" required [(ngModel)]="massage.phone" #phone="ngModel" appPhoneValid>
+                        <label for="phone">מספר נייד</label>
+                        <div [hidden]="phone.value || phone.pristine && phone?.untouched" class="alertValid"> 
+                            <span class="alertTextValid">
+                                Phone is emtpy
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                </svg>
+                            </span> 
+                        </div>
+                        <div [hidden]="!phone.errors?.['phoneValid']||phone.pristine" class="alertValid">
+                            <span class="alertTextValid">
+                                phone is not valid
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                </svg>
+                            </span> 
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control rounded-3" name="email" required [(ngModel)]="massage.email" #email="ngModel" appEmailValid >
+                        <label for="email">מייל</label>
+                        <div [hidden]="email.value || email.pristine && email?.untouched" class="alertValid" > 
+                            <span class="alertTextValid">
+                                Email is emtpy
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                </svg>
+                            </span> 
+                        </div>
+                        <div [hidden]="!email.errors?.['emailValid']||email.pristine" class="alertValid">
+                            <span class="alertTextValid">
+                                email is not valid
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                </svg>
+                            </span> 
+                        </div>
+                    </div>
+                    
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" [disabled]="!MassageForm.valid" type="submit"><b>שליחה</b></button>
+                    <div [hidden]="flag==false">
+                        <div class="overlay" (click)="off()" routerLink="/home">
+                            <p class="text shadow-text">
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                                    ההודעה נשלחה בהצלחה! נחזור אליכם בהקדם האפשרי
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

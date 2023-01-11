@@ -1,0 +1,13 @@
+<p class="card-text">{{service.Details}}</p>
+<p class="card-text"> 
+  <svg  xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" [ngClass]="{'lightBlueText':service.ServiceType==0,'lightPinkText':service.ServiceType==1,'pinkText':service.ServiceType==2}">
+    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+  </svg>
+  <b> שנות נסיון:</b> {{service.ExperienceYears}}
+</p>
+<p class="card-text"> 
+  <svg  xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" [ngClass]="{'lightBlueText':service.ServiceType==0,'lightPinkText':service.ServiceType==1,'pinkText':service.ServiceType==2}">
+    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+  </svg>
+   <b> מקום ההכשרה:</b> {{service.PlaceOfStudy}}
+</p>

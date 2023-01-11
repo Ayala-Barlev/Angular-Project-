@@ -1,0 +1,37 @@
+<div class="card mb-3" style="max-width: 700px; margin: auto;text-align: right;" [ngClass]="{'lightBlue':service.ServiceType==0,'lightPink':service.ServiceType==1,'pink':service.ServiceType==2}" >
+    <div class="row g-0" >
+      <div class="col-md-4">
+        <div [hidden]="flag==true">
+          <span [ngSwitch]="service.ServiceType">
+            <span *ngSwitchCase="web.getSrevicesEnum.GRAPHOLOGY"><img src="\assets\צבעי קרש.jpg" class="img-fluid rounded-start" height="100%" width="auto"></span>
+            <span *ngSwitchCase="web.getSrevicesEnum.CARDS"><img src="\assets\cards2.jpg" class="img-fluid rounded-start"></span>
+            <span *ngSwitchDefault><img src="\assets\פרחים (2).jpg" class="img-fluid rounded-start"></span>
+          </span> 
+        </div>
+        <div [hidden]="flag==false">
+          <span [ngSwitch]="service.ServiceType">
+            <span *ngSwitchCase="web.getSrevicesEnum.GRAPHOLOGY"><img src="\assets\long colors.jpg" class="img-fluid rounded-start" height="100%" width="auto"></span>
+            <span *ngSwitchCase="web.getSrevicesEnum.CARDS"><img src="\assets\long cards.jpg" class="img-fluid rounded-start"></span>
+            <span *ngSwitchDefault><img src="\assets\long flowers.jpg" class="img-fluid rounded-start"></span>
+          </span> 
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <span [ngSwitch]="service.ServiceType">
+                <h3 class="lightBlueText fs-1" *ngSwitchCase="web.getSrevicesEnum.GRAPHOLOGY"><b>גרפולוגיה </b></h3>
+                <h3 class="pinkText fs-1" *ngSwitchCase="web.getSrevicesEnum.CARDS"><b>כרטיסים טיפוליים</b></h3>
+                <h3 class="lightPinkText fs-1" *ngSwitchDefault><b>פרחי באך</b></h3>
+            </span> 
+          <p class="card-text">{{service.Description}}</p>
+          <div [hidden]="flag==true">
+            <p class="card-text"><button (click)="moreDetails()" class="resetButtom" [ngClass]="{'lightBlueText':service.ServiceType==0,'lightPinkText':service.ServiceType==1,'pinkText':service.ServiceType==2}"><b>≚ לפרטים נוספים</b></button></p>
+          </div>
+          <div [hidden]="flag==false">
+            <p class="card-text"><button (click)="lessDetails()" class="resetButtom" [ngClass]="{'lightBlueText':service.ServiceType==0,'lightPinkText':service.ServiceType==1,'pinkText':service.ServiceType==2}"><b>≙ פחות פרטים</b></button></p>
+            <app-details-services [service]="service"></app-details-services>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

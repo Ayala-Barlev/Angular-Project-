@@ -1,0 +1,25 @@
+   <div  class="card mx-auto" style="width: 18rem ;direction: rtl; text-align: center;" [ngClass]="{'lightBlue':comment.ServiceType==0,'lightPink':comment.ServiceType==1,'pink':comment.ServiceType==2}">
+        <span [ngSwitch]="comment.ServiceType">
+            <span *ngSwitchCase="web.getSrevicesEnum.GRAPHOLOGY"><img src="\assets\גרפולוגיה.png" class="card-img-top"></span>
+            <span *ngSwitchCase="web.getSrevicesEnum.CARDS"><img src="\assets\כרטיסים.png" class="card-img-top" width="10px"></span>
+            <span *ngSwitchDefault><img src="\assets\פרחים.png" class="card-img-top"></span>
+        </span> 
+        <div class="card-body">
+            <h6>{{comment.Date | date:'shortDate'}}</h6>
+            <span [ngSwitch]="comment.ServiceType">
+                <h3 *ngSwitchCase="web.getSrevicesEnum.GRAPHOLOGY"><button class="resetButtom lightBlueText"routerLink="/list-services"><b>גרפולוגיה</b> </button></h3>
+                <h3 *ngSwitchCase="web.getSrevicesEnum.CARDS"><button class="resetButtom pinkText"routerLink="/list-services"><b>כרטיסים טיפוליים</b> </button></h3>
+                <h3 *ngSwitchDefault><button class="resetButtom lightPinkText"routerLink="/list-services"><b>פרחי באך</b> </button></h3>
+            </span> 
+            <p class="card-text">{{comment.Text |addHeart}}</p>
+            <b class="card-text">{{comment.Name}}</b>
+            <br>
+            <b class="card-text">{{comment.Likes}}</b>
+            <button (click)="putLike(comment)" class="resetButtom">
+            <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" [ngClass]="{'lightBlueText':comment.ServiceType==0,'lightPinkText':comment.ServiceType==1,'pinkText':comment.ServiceType==2}">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+              </svg>
+            </button>
+        </div>     
+    </div>
+    

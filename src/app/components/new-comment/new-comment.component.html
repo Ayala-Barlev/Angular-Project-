@@ -1,0 +1,96 @@
+<div class="modal modal-signin position-static d-block py-5 mt-2" id="modalSignin">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2"><img src="/assets/logo.png" width="40px">הוספת תגובה:</h1>
+            </div>
+
+            <div class="modal-body p-5 pt-0">
+                <form [formGroup]="FormAddComment">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-3" formControlName="fullName" name="fullName">
+                        <label for="fullName">שם מלא</label>
+                        <div *ngIf="fullName?.invalid && (fullName?.touched || fullName?.dirty)">
+                            <div class="alertValid">
+                                <span class="alertTextValid" *ngIf="fullName?.errors?.['required']">Full Name is emtpy</span>
+                                <span class="alertTextValid" *ngIf="fullName?.errors?.['pattern']">Full Name isn't valid </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="tel" class="form-control rounded-3" formControlName="phone" name="phone">
+                        <label for="phone">מספר נייד</label>
+                        <div *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)">
+                            <div class="alertValid">
+                                <span class="alertTextValid" *ngIf="phone?.errors?.['required']">Phone Number is emtpy</span>
+                                <span class="alertTextValid" *ngIf="phone?.errors?.['pattern']">Phone Number isn't valid </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control rounded-3" formControlName="email" name="email">
+                        <label for="email">מייל</label>
+                        <div *ngIf="email?.invalid && (email?.touched || email?.dirty)">
+                            <div class="alertValid">
+                                <span class="alertTextValid" *ngIf="email?.errors?.['required']">Email is emtpy</span>
+                                <span class="alertTextValid" *ngIf="email?.errors?.['pattern']">Email isn't valid </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                        <select class="form-control" name="service" formControlName="service">
+                            <option value="0">גרפולוגיה</option>
+                            <option value="2">טיפול בכרטיסים</option>
+                            <option value="1">טיפול בפרחי באך</option>
+                        </select>                        
+                        <label for="service">השרות שקיבלתי</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-3" formControlName="text" name="text">
+                        <label for="text">תוכן התגובה</label>
+                        <div *ngIf="text?.invalid && (text?.touched || text?.dirty)">
+                            <div class="alertValid">
+                                <span class="alertTextValid" *ngIf="text?.errors?.['required']">Contain Of Comment is emtpy</span>
+                                <span class="alertTextValid" *ngIf="text?.errors?.['pattern']">Contain Of Comment isn't valid </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-3" formControlName="name" name="name">
+                        <label for="name">שם לפרסום</label>
+                        <div *ngIf="name?.invalid && (name?.touched || name?.dirty)">
+                            <div class="alertValid">
+                                <span class="alertTextValid" *ngIf="name?.errors?.['required']">Second Name is emtpy</span>
+                                <span class="alertTextValid" *ngIf="name?.errors?.['pattern']">Second Name isn't valid </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" (click)="postComment()" [disabled]="!FormAddComment.valid" routerLink="/comments" type="button"><b>הוספה</b></button>
+                    <small class="text-muted"> בעת לחיצה על 'הוספה' התגובה נוספת לאוסף התגובות</small>
+                    <hr class="my-4">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
